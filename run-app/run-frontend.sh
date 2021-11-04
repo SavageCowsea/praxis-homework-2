@@ -4,7 +4,7 @@ echo "Hello from frontend!"
 cd /
 cd /shared/
 tar -xvf dist.tar.gz
-#Install nginx
+#Installing  nginx
 cd 
 sudo yum install epel-release -y
 sudo yum update -y
@@ -13,7 +13,7 @@ sudo yum install nginx -y
 sudo systemctl start nginx
 sudo systemctl enable nginx
 #Modify the nginx default configuration file
-cat <<-'reemplazo' > /etc/nginx/nginx.conf
+cat <<-'change' > /etc/nginx/nginx.conf
 user  nginx;
 worker_processes  1;
 error_log  /var/log/nginx/error.log warn;
@@ -44,7 +44,7 @@ http {
     }
   }
 }
-reemplazo
+change
 #Reload the nginx server
 sudo systemctl reload nginx
 
